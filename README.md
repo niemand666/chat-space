@@ -30,26 +30,32 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
+
 ###Association
 - has_many :groups,  through:  :users_groups
 - has_many :messages
+
 
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
 |groupname|string|null: false|
+
 ###Association
 - has-many :users,  through:  :users_groups
 - has_many :messages
+
 
 ## users_groups table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+
 ###Association
 - belongs_to :user
 - belongs_to :group
+
 
 ## messages table
 |Column|Type|Options|
@@ -58,6 +64,7 @@ Things you may want to cover:
 |image|string|------|
 |user_id|integer|null: false, foreign_key:  true|
 |group_id|integer|null: false, foreign_key:  true|
+
 ###Association
 - belongs_to :user
 - belongs_to :group
