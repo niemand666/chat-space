@@ -1,0 +1,34 @@
+%html
+ %body
+ .flash-box
+  .notice グループを作成しました
+
+ = render "messages/chat-side"
+
+ .chat-main
+  .main-header
+   .main-headr__left-box
+    %h2.main-header__left-box__current-group エンジニアクラス
+    %ul.main-header__left-box__member-list 
+     member：
+     %li.main-header__left-box__member-list__name 
+      NAME
+   =link_to "/edit/group", class: "main-header__edit-btn" do
+    Edit
+
+  .messages
+   .message
+    .message__upper-info
+     %p.message__upper-info__talker NAME
+     %p.message__upper-info__date 2019/08/19(Mon) 15:00:00
+    %p.massage__text こんにちは。
+
+  .form
+   %form
+    %input.form__message#message_content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+    .form__mask
+     %label.form__mask__image
+      = fa_icon 'picture-o', class: 'icon'
+      %input.hidden{type: 'file', name: 'message[image]'}
+   %input.form__submit{type: 'submit', value: 'Send'}
+   
