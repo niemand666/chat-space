@@ -11,8 +11,10 @@
       = fa_icon 'cog'
 
   .groups
-   =link_to "/group/messages", class: "group" do
-    .group
-     %p.group__group-name エンジニアクラス
-     %p.group__group-message ようこそ。
-     
+   .group
+    - current_user.groups.each do |group|
+     = link_to group_messages_path(group) do
+      .group__name
+       = group.name
+       .group__message
+       メッセージはまだありません。
