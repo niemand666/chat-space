@@ -2,11 +2,12 @@
  .chat-side
   .side-header
    .side-header__box
-    %p.side-header__box__user-name NAME
+    %p.side-header__box__user-name 
+     = current_user.name
     %ul.side-header__box__menu
-     =link_to "/groups/new", class: "side-header__box__menu__new-group" do
+     =link_to new_group_path, class: "side-header__box__menu__new-group" do
       = fa_icon 'edit'
-     =link_to "/edit/user", class: "side-header__box__menu__edit-user" do
+     =link_to edit_user_path(current_user), class: "side-header__box__menu__edit-user" do
       = fa_icon 'cog'
 
   .groups
@@ -14,3 +15,4 @@
     .group
      %p.group__group-name エンジニアクラス
      %p.group__group-message ようこそ。
+     
