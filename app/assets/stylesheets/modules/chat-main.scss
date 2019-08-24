@@ -1,5 +1,4 @@
 .chat-main{
-  height: 651px;
   width: calc(100vw - 300px);
   background: #fafafa;
   float: right;
@@ -40,32 +39,34 @@
 
 
 .messages{
-    height: calc(100% - 140px);
-    padding: 46px 40px;
+    box-sizing: border-box;
+    padding: 46px 40px 100px;
+    height: 603px;
     background-color: #fafafa;
     overflow: scroll;
-    .message{
-      padding-bottom: 40px;
-      &__upper-info{
-        display: flex;
-        padding-bottom: 10px;
-      }
-       &__upper-info__talker{
+  .message{
+    .upper-info{
+      display: flex;
+      padding-bottom: 10px;
+      &__talker{
         color: #434a54;
         font-size: 16px;
         font-weight: bold;
-       }
-       &__upper-info__date{
+        }
+      &__date{
         color: #999999;
         font-size: 12px;
         margin-left: 10px;
-       }
-       &__text{
-         font-size: 14px;
-         color: #434a54;
-       }
+        }
     }
+    .text{
+      font-size: 14px;
+      color: #434a54;
+      margin-bottom: 40px;
+    }
+  }
 }
+
 
 
 

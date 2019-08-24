@@ -6,27 +6,24 @@
  .chat-main
   .main-header
    .main-headr__left-box
-    %h2.main-header__left-box__current-group エンジニアクラス
+    %h2.main-header__left-box__current-group
+     = @group.name
     %ul.main-header__left-box__member-list 
      member：
      %li.main-header__left-box__member-list__name 
-      NAME
-   =link_to "/edit/group", class: "main-header__edit-btn" do
+      - @group.group_users.each do |group_user|
+       = group_user.user.name
+   =link_to "/edit", class: "main-header__edit-btn" do
     Edit
 
   .messages
-   .message
-    .message__upper-info
-     %p.message__upper-info__talker NAME
-     %p.message__upper-info__date 2019/08/19(Mon) 15:00:00
-    %p.massage__text こんにちは。
+   = render @messages
 
   .form
-   %form
-    %input.form__message{name: "message[content]",  placeholder: "type a message",  type: "text"}
+   = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
     .form__mask
-     %label.form__mask__image
+     = f.label :image, class: 'form__mask__image' do
       = fa_icon 'picture-o', class: 'icon'
-      %input.hidden{type: 'file', name: 'message[image]'}
-   %input.form__submit{type: 'submit', value: 'Send'}
-   
+      = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'form__submit'
