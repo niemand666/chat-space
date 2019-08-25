@@ -13,7 +13,7 @@
      %li.main-header__left-box__member-list__name 
       - @group.group_users.each do |group_user|
        = group_user.user.name
-   =link_to "/edit", class: "main-header__edit-btn" do
+   =link_to "edit", class: "main-header__edit-btn" do
     Edit
 
   .messages
