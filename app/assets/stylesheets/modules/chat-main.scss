@@ -40,8 +40,8 @@
 
 .messages{
     box-sizing: border-box;
-    padding: 46px 40px 100px;
-    height: 603px;
+    padding: 46px 40px 0;
+    height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     overflow: scroll;
   .message{
