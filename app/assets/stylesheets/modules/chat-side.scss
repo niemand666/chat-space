@@ -1,4 +1,5 @@
 .chat-side{
+  box-sizing: border-box;
   width: 300px;
   float: left;
   background-color: $white;
@@ -9,6 +10,7 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
+    border-bottom: solid 1px $side_blue_dark;
      &__box {
         display: flex;
         color: $white;
@@ -32,7 +34,7 @@
 
 
   .groups{
-    height: calc(100vh - 115px);
+    height: calc(100vh - 120px);
     width: 260px;
     background-color: $side_blue_light;
     padding: 20px 20px 0;
