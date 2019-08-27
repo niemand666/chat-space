@@ -20,6 +20,7 @@ $(document).on('turbolinks:load', function(){
                 </div>`
   return html;
   }
+  
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this);
